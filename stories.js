@@ -145,7 +145,12 @@ function isFavoritesArrEmpty() {
 function isStoryFavorite(story) {
   let str = localStorage.getItem("favorites");
   let favArr = JSON.parse(str);
-  return favArr.some(favStory => favStory.storyId === story.storyId);
+   if(favArr) {
+      return favArr.some(favStory => favStory.storyId === story.storyId);
+    }
+    else {
+      return false;
+    }
 }
 
 
